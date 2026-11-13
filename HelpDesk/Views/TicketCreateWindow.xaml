@@ -1,0 +1,106 @@
+﻿<Window x:Class="HelpDesk.Views.TicketCreateWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HelpDesk.Views"
+        mc:Ignorable="d"
+        Title="HelpDesk — Новая заявка" 
+        Height="550" 
+        Width="450"
+        WindowStartupLocation="CenterOwner">
+
+    <Grid Margin="30,20,30,20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="15"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="15"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="15"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" 
+                   Text="Новая заявка" 
+                   FontSize="22" 
+                   FontWeight="Bold" 
+                   HorizontalAlignment="Center"/>
+
+        <TextBlock Grid.Row="2" 
+                   Text="Категория" 
+                   FontSize="12" 
+                   Opacity="0.7" 
+                   Margin="0,0,0,5"/>
+
+        <ComboBox x:Name="CategoryComboBox"
+                  Grid.Row="3"
+                  Height="35"
+                  FontSize="14"
+                  SelectedIndex="0">
+            <ComboBoxItem Content="Выберите категорию" IsEnabled="False"/>
+            <ComboBoxItem Content="Оборудование"/>
+            <ComboBoxItem Content="Программное обеспечение"/>
+            <ComboBoxItem Content="Сеть"/>
+            <ComboBoxItem Content="Учётная запись"/>
+            <ComboBoxItem Content="Периферия"/>
+            <ComboBoxItem Content="Другое"/>
+        </ComboBox>
+
+        <TextBlock Grid.Row="5" 
+                   Text="Описание проблемы" 
+                   FontSize="12" 
+                   Opacity="0.7" 
+                   Margin="0,0,0,5"/>
+
+        <TextBox x:Name="DescriptionTextBox"
+                 Grid.Row="6"
+                 FontSize="14"
+                 TextWrapping="Wrap"
+                 AcceptsReturn="True"
+                 VerticalContentAlignment="Top"
+                 Padding="5"/>
+
+        <TextBlock Grid.Row="8" 
+                   Text="Приоритет" 
+                   FontSize="12" 
+                   Opacity="0.7" 
+                   Margin="0,0,0,5"/>
+
+        <ComboBox x:Name="PriorityComboBox"
+                  Grid.Row="9"
+                  Height="35"
+                  FontSize="14"
+                  SelectedIndex="1">
+            <ComboBoxItem Content="Низкий"/>
+            <ComboBoxItem Content="Средний"/>
+            <ComboBoxItem Content="Высокий"/>
+        </ComboBox>
+
+        <Grid Grid.Row="11">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="15"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button x:Name="SaveButton"
+                    Grid.Column="0"
+                    Content="Сохранить"
+                    Height="35"
+                    FontSize="14"/>
+
+            <Button x:Name="CancelButton"
+                    Grid.Column="2"
+                    Content="Отмена"
+                    Height="35"
+                    FontSize="14"/>
+        </Grid>
+    </Grid>
+</Window>
+
